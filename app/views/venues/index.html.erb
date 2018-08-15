@@ -102,7 +102,7 @@
         <th>Actions</th>
       </tr>
 
-      <% @venues.each do |venue| %>
+      <% current_user.bookmarked_venues.each do |venue| %>
       <tr>
         <td><%= venue.name %></td>
         <td><%= venue.address %></td>
