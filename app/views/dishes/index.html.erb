@@ -2,6 +2,7 @@
   <h1>
     Dishes
     <a href="/dishes/new" class="btn btn-lg btn-success">New Dish</a>
+    <a href="/venues/new" class="btn btn-lg btn-success">New Venue</a>
   </h1>
 </div><div class="row mb-1">
   <div class="col-md-12">
@@ -89,6 +90,7 @@
       <tr>
         <th>Name</th>
         <th>Cuisine</th>
+        <th>Venue</th
         <th>Actions</th>
       </tr>
 
@@ -106,6 +108,16 @@
             </a>
           <% end %>
         </td>
+        
+        <td>
+            <% if dish.specialists.present? %>
+           
+            <%= dish.specialists.last.name %>
+        
+          <% end %>
+          
+        </td>
+        
         <td>
           <a href="/dishes/<%= dish.id %>" class="btn btn-primary">Show</a>
           <a href="/dishes/<%= dish.id %>/edit" class="btn btn-warning">Edit</a>
