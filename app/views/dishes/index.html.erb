@@ -89,6 +89,7 @@
       <tr>
         <th>Name</th>
         <th>Cuisine</th>
+        <th>Venue</th
         <th>Actions</th>
       </tr>
 
@@ -106,6 +107,16 @@
             </a>
           <% end %>
         </td>
+        
+        <td>
+            <% if dish.specialists.present? %>
+           
+            <%= dish.specialists.last.name %>
+        
+          <% end %>
+          
+        </td>
+        
         <td>
           <a href="/dishes/<%= dish.id %>" class="btn btn-primary">Show</a>
           <a href="/dishes/<%= dish.id %>/edit" class="btn btn-warning">Edit</a>
