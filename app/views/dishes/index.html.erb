@@ -91,7 +91,6 @@
         <th>Name</th>
         <th>Cuisine</th>
         <th>Venue</th>
-        <th>Change</th>
         <th>Actions</th>
       </tr>
 
@@ -110,13 +109,15 @@
           <% end %>
         </td>
         
-        <% if dish.specialists.present? %>
+        <% if current_user.bookmarks.where(dish_id: dish.id).present? %>
         <td>
-           <a href="dishes/<%= dish.specialists.last.id %>">
-            <%= dish.specialists.last.name %>
+           <a href="venue/<%= current_user.bookmarks.where(dish_id: dish.id).last.venue %>">
+            <%= current_user.bookmarks.where(dish_id: dish.id).last.venue.name %>
         </a>
         </td>
-        <%end%>
+        
+        
+        <%else%>
         <td>
           <form action="/create_bookmark" class="form-inline" method="post">
                 
@@ -134,7 +135,7 @@
   
 </form>
         </td>
-          
+          <%end%>
   
           
         
