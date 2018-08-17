@@ -111,7 +111,7 @@
         
         <% if current_user.bookmarks.where(dish_id: dish.id).present? %>
         <td>
-           <a href="venue/<%= current_user.bookmarks.where(dish_id: dish.id).last.venue %>">
+           <a href="venue/<%= current_user.bookmarks.where(dish_id: dish.id).last.venue_id %>">
             <%= current_user.bookmarks.where(dish_id: dish.id).last.venue.name %>
         </a>
         </td>
