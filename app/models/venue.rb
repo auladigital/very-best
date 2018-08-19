@@ -35,6 +35,10 @@ class Venue < ApplicationRecord
   has_many   :fans,
              :through => :bookmarks,
              :source => :user
+             
+  has_many    :styles, 
+              :through => :specialties, 
+              :source => :cuisine
 
   # Validations
 
