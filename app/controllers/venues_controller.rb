@@ -1,6 +1,9 @@
 class VenuesController < ApplicationController
   def index
-    @q = Venue.ransack(params[:q])
+    
+    @i = current_user.bookmarked_venues
+    
+    @q = @i.ransack(params[:q])
     
     @venues = @q.result(:distinct => true).includes(:bookmarks, :neighborhood, :fans, :specialties, :styles).page(params[:page]).per(10)
     
