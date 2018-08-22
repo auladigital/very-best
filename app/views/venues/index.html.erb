@@ -116,7 +116,7 @@
         <th>Actions</th>
       </tr>
 
-      <% current_user.bookmarked_venues.each do |venue| %>
+      <% @venues.each do |venue| %>
         <tr>
           <td> <a href="/venues/<%=venue.id%>">
           <%= venue.name %></a> </td>
